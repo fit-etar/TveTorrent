@@ -1,0 +1,7 @@
+[package]
+name = "tve_torrent"
+version = "0.1.0"
+authors = ["emil42j9"]
+edition = "2018"
+
+[dependencies]
