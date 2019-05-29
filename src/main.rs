@@ -1,9 +1,17 @@
-fn main() {
-    println!("Hello, world!");
-    println!("WHADDUP BITCHES");
-    println!("{}", t());
+extern crate azul;
+
+use azul::prelude::*;
+
+struct MyDataModel { }
+
+impl Layout for MyDataModel {
+    fn layout(&self, _: LayoutInfo<Self>) -> Dom<Self> {
+        Dom::div()
+    }
 }
 
-fn t() -> f64 {
-	return 2.0;
+fn main() {
+    let mut app = App::new(MyDataModel { }, AppConfig::default()).unwrap();
+    let window = app.create_window(WindowCreateOptions::default(), css::native()).unwrap();
+    app.run(window).unwrap();
 }
